@@ -286,13 +286,6 @@
   </url>
   
   <url>
-    <loc>https://lovelee.cn/tags/note/</loc>
-    <lastmod>2022-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lovelee.cn/tags/hexo/</loc>
     <lastmod>2022-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -307,6 +300,13 @@
   </url>
   
   <url>
+    <loc>https://lovelee.cn/tags/note/</loc>
+    <lastmod>2022-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lovelee.cn/tags/vercel/</loc>
     <lastmod>2022-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -314,14 +314,14 @@
   </url>
   
   <url>
-    <loc>https://lovelee.cn/tags/nodejs/</loc>
+    <loc>https://lovelee.cn/tags/less/</loc>
     <lastmod>2022-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lovelee.cn/tags/less/</loc>
+    <loc>https://lovelee.cn/tags/nodejs/</loc>
     <lastmod>2022-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
