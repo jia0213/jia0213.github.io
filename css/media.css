@@ -1,0 +1,20 @@
+@media screen and (max-width:800px) {
+    #live2d-widget{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #recent-posts > .recent-post-item {
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -o-box-orient: vertical;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        height: auto;
+    }
+    .recent-post-item .post_cover.left::before,.recent-post-item .post_cover.right::after{
+        display: none ;
+    }
+}
