@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 // 1 cnpm install mongodb --save
 
 //2、引入mongodb
