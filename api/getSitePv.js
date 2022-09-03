@@ -72,8 +72,7 @@ module.exports = function site_pv(req, res) {
                 res.status(200).json({
                     result: true,
                     message: 'ok',
-                    data,
-                    BuiltTime
+                    data
                 });
                 //操作数据库完毕以后一定要 关闭数据库连接
                 client.close();
