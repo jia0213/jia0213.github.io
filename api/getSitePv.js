@@ -5,19 +5,19 @@
     response.status(200).send(`Hello ${name}!`);
 } */
 
-const express = require('express')
-const app = express()
-const bodyParser = require("body-parser");
+// const express = require('express')
+// const app = express()
+// const bodyParser = require("body-parser");
 //拦截所有请求
 // extended: false方法内部使用querystring模块处理请求参数的格式
 // extended: true方法内部使用第三方模块qs处理请求参数的格式
-app.use(bodyParser.urlencoded({
-    extended: false
-}))
-app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({
+//     extended: false
+// }))
+// app.use(bodyParser.json())
 //  获取请求头cookie参数 转化为 {key:value};
-const cookieparser = require("cookie-parser");
-app.use(cookieparser())
+// const cookieparser = require("cookie-parser");
+// app.use(cookieparser())
 // 1 cnpm install mongodb --save
 
 //2、引入mongodb
