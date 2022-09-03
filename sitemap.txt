@@ -1,3 +1,4 @@
+https://lovelee.cn/api/package.json
 https://lovelee.cn/tags/index.html
 https://lovelee.cn/2022/08/31/github_action_deploy_hexo/
 https://lovelee.cn/2022/08/29/top/
