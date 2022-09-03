@@ -34,7 +34,7 @@ module.exports = function handler(request, response) {
             console.log(err);
             return;
         }
-        console.log("数据库连接成功");
+        console.log("数据库"+dbName+"连接成功");
         let db = client.db(dbName);
         // //1、查找数据
         db.collection("comment").find().toArray((err, data) => {
