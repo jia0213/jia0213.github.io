@@ -30,7 +30,8 @@ $(window).on('load', function () {
     // })
 
 
-    const _apiBaseUrl = "http://localhost:3000";
+    // const _apiBaseUrl = "http://localhost:3000";
+    const _apiBaseUrl = "";
     function setPvAjax(data){
         $.ajax({
             // url:'/api/test',
