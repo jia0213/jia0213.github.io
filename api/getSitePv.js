@@ -36,14 +36,14 @@ module.exports = function site_pv(req, res) {
     let lee_site_pv_id = only_lee_site_pv || generateUUID();
 
     const {
-        body
+        body,cookies:header_cookies,query
     } = req;
-    // console.log(req);
+    console.log(header_cookies,body,query,'~~~~');
     //6、连接数据库 操作数据
     let {
         method,
         lee_site_pv
-    } = body; // TODO 可以考虑换成 cookie的形式，禁止客户端改动cookie比localStorage数据更准确一电
+    } = body || {}; // TODO 可以考虑换成 cookie的形式，禁止客户端改动cookie比localStorage数据更准确一电
     // if(!lee_site_pv){
     //     res.cookie('lee_site_pv', lee_site_pv_id, {
     //         maxAge: 60 * 60 * 1000 * 24 * 365,
