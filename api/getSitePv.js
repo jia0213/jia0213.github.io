@@ -65,7 +65,7 @@ module.exports = function site_pv(req, res) {
             }; // 查询条件
             let _id = whereStr.lee_site_pv;
             let record = await db.collection(dbName).findOne(whereStr);
-            if(record && record.data){
+            if(record && record._id){
                 if (isNaN(record.count)) record.count = 0;
                 let theCount = Number(record.count);
                 theCount++;

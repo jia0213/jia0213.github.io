@@ -18,3 +18,9 @@
         display: none ;
     }
 }
+
+@media screen and (max-width: 650px){
+    .contrib-column {
+        display: table-cell !important;
+    }
+}
