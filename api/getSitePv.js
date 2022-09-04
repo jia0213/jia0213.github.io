@@ -81,6 +81,8 @@ module.exports = function site_pv(req, res) {
                         message: 'ok',
                         dataMsg: "老访客浏览次数: " + (theCount - 1) + "=>" + theCount,
                         data: [{
+                            ...record,
+                            count:theCount,
                             lee_site_pv: _id
                         }],
                         result: true
