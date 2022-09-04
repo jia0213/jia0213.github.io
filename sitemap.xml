@@ -344,20 +344,6 @@
   </url>
   
   <url>
-    <loc>https://lovelee.cn/tags/other/</loc>
-    <lastmod>2022-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lovelee.cn/tags/begin/</loc>
-    <lastmod>2022-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lovelee.cn/tags/study/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -366,6 +352,20 @@
   
   <url>
     <loc>https://lovelee.cn/tags/todos/</loc>
+    <lastmod>2022-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lovelee.cn/tags/other/</loc>
+    <lastmod>2022-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lovelee.cn/tags/begin/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -451,14 +451,14 @@
   </url>
   
   <url>
-    <loc>https://lovelee.cn/categories/emotion/</loc>
+    <loc>https://lovelee.cn/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lovelee.cn/categories/%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://lovelee.cn/categories/emotion/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
