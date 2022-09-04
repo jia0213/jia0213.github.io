@@ -33,7 +33,7 @@ $(window).on('load', function () {
     const _apiBaseUrl = "";
     // 记录访问信息
     let isRecording = false;
-    if (location.pathname.toLowerCase().match("")!==null) getPv();;
+    if (location.pathname=="/") getPv();;
     function setPvAjax(data){
         if(isRecording)return;
         isRecording = true;
@@ -60,7 +60,7 @@ $(window).on('load', function () {
         if(pvInfo.result && pvInfo.data.length==0)setPv();
         if(pvInfo.result && pvInfo.data.length!==0){
             let someone = pvInfo.data[0];
-            let welcome = $(`<div style="position:fixed;padding:15px;width:200px;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;border-radius: 4px;background: rgba(0,0,0,.6);color: #fff;font-size: 16px;text-align: center;">欢迎你，老朋友，这是你第${someone.count}次访问哦~😉</div>`)
+            let welcome = $(`<div style="position:fixed;padding:15px;width:200px;top: 6%;right: 20px;display:flex;align-items:center;justify-content:center;border-radius: 4px;background: rgba(0,0,0,.6);color: #fff;font-size: 16px;text-align: center;">欢迎你，老朋友，这是你第${someone.count}次访问哦~😉</div>`)
             if(someone.count){
                 welcome.appendTo($("body"));
                 setTimeout(()=>{
