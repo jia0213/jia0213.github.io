@@ -36,9 +36,11 @@ module.exports = function site_pv(req, res) {
     let lee_site_pv_id = only_lee_site_pv || generateUUID();
 
     const {
-        body,cookies:header_cookies,query
+        body,
+        cookies: header_cookies,
+        query
     } = req;
-    console.log(header_cookies,body,query,'~~~~');
+    console.log(header_cookies, body, query, '~~~~');
     //6、连接数据库 操作数据
     let {
         method,
@@ -63,19 +65,48 @@ module.exports = function site_pv(req, res) {
             let whereStr = {
                 "lee_site_pv": query.id || req.cookies.lee_site_pv || ''
             }; // 查询条件
-            db.collection(dbName).find(whereStr).toArray((err, data) => {
+            body.count = body.count || 0;
+
+            db.collection(dbName).find(whereStr).toArray(async (err, data) => {
                 if (err) {
                     console.log(err);
                     return;
                 }
+                if (data.length !== 0) {
+                    let theOne = await db.collection(dbName).findOne(whereStr);
+                    if (isNaN(theOne.count)) theOne.count = 0;
+                    let theCount = Number(theOne.count);
+                    theCount++;
+                    var updateStr = {
+                        $set: {
+                            "count": theCount
+                        }
+                    };
+                    db.collection(dbName).updateOne(whereStr, updateStr, function (err, resp) {
+                        if (err) throw err;
+                        // console.log(resp);
+                        res.status(200).send({
+                            message: 'ok',
+                            dataMsg: "老访客浏览次数: " + (theCount - 1) + "=>" + theCount,
+                            data: [{
+                                lee_site_pv: _id
+                            }],
+                            result: true
+                        });
+                        //操作数据库完毕以后一定要 关闭数据库连接
+                        client.close();
+                    });
+                } else {
+                    res.status(200).json({
+                        result: true,
+                        message: 'ok',
+                        data
+                    });
+                    //操作数据库完毕以后一定要 关闭数据库连接
+                    client.close();
+                }
                 // console.log(data);
-                res.status(200).json({
-                    result: true,
-                    message: 'ok',
-                    data
-                });
-                //操作数据库完毕以后一定要 关闭数据库连接
-                client.close();
+
             })
         } else if (method == 'getAll') {
             // //1、查找数据
