@@ -1,3 +1,4 @@
+https://lovelee.cn/comments/index.html
 https://lovelee.cn/api/package.json
 https://lovelee.cn/tags/index.html
 https://lovelee.cn/2022/08/31/github_action_deploy_hexo/
@@ -22,7 +23,6 @@ https://lovelee.cn/2022/08/29/axios/
 https://lovelee.cn/2022/08/29/Express/
 https://lovelee.cn/link/index.html
 https://lovelee.cn/resume/index.html
-https://lovelee.cn/comments/index.html
 https://lovelee.cn/galleryGroup/index.html
 https://lovelee.cn/categories/index.html
 https://lovelee.cn/galleryGroup/girls/index.html

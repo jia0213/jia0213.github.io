@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lovelee.cn/comments/index.html</loc>
+    
+    <lastmod>2022-09-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lovelee.cn/api/package.json</loc>
     
     <lastmod>2022-09-03</lastmod>
@@ -210,15 +219,6 @@
   
   <url>
     <loc>https://lovelee.cn/resume/index.html</loc>
-    
-    <lastmod>2022-08-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lovelee.cn/comments/index.html</loc>
     
     <lastmod>2022-08-26</lastmod>
     
