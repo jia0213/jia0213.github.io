@@ -33,6 +33,7 @@ $(window).on('load', function () {
     const _apiBaseUrl = "";
     // 记录访问信息
     let isRecording = false;
+    if (location.pathname.toLowerCase().match("")!==null) getPv();;
     function setPvAjax(data){
         if(isRecording)return;
         isRecording = true;
@@ -101,5 +102,5 @@ $(window).on('load', function () {
         }
     }
 
-    getPv();
+    
 })
