@@ -29,10 +29,13 @@ $(window).on('load', function () {
     //     }
     // })
 
-
     // const _apiBaseUrl = "http://localhost:3000";
     const _apiBaseUrl = "";
+    // 记录访问信息
+    let isRecording = false;
     function setPvAjax(data){
+        if(isRecording)return;
+        isRecording = true;
         $.ajax({
             // url:'/api/test',
             url:`${_apiBaseUrl}/api/getSitePv`,
@@ -44,15 +47,31 @@ $(window).on('load', function () {
                 let data =res.data[0]
                 localStorage.lee_site_pv = data.lee_site_pv
             }
+            isRecording = false;
             console.log(res,'~~');
         })
     }
     // 获取访问信息
     async function getPv(){
-        let pvInfo = await $.get(`${_apiBaseUrl}/api/getSitePv`);
-            console.log(pvInfo);
+        let pv_person = localStorage.lee_site_pv;
+        let pvInfo = await $.get(`${_apiBaseUrl}/api/getSitePv?id=${pv_person}`);
+            // console.log(pvInfo);
+        if(pvInfo.result && pvInfo.data.length==0)setPv();
+        if(pvInfo.result && pvInfo.data.length!==0){
+            let someone = pvInfo.data[0];
+            let welcome = $(`<div style="position:fixed;padding:15px;width:200px;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;border-radius: 4px;background: rgba(0,0,0,.6);color: #fff;font-size: 16px;text-align: center;">欢迎你，老朋友，这是你第${someone.count}次访问哦~😉</div>`)
+            if(someone.count){
+                welcome.appendTo($("body"));
+                setTimeout(()=>{
+                    welcome.animate({"height":0},333,()=>{
+                        welcome.remove();
+                    });
+                },2000)
+            }
+        };
+
     }
-    // 记录访问信息
+    
     async function setPv(){
         let pvInfo = JSON.parse(await $.get('https://ip.useragentinfo.com/json'));
         let {
@@ -82,9 +101,5 @@ $(window).on('load', function () {
         }
     }
 
-    $('#content-inner').on('click',()=>{
-        console.log(1);
-        setPv();
-    })
     getPv();
 })

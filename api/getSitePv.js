@@ -61,7 +61,7 @@ module.exports = function site_pv(req, res) {
         if (method == 'get' || !method) {
             // //1、查找数据
             let whereStr = {
-                "lee_site_pv": req.cookies.lee_site_pv || ''
+                "lee_site_pv": query.id || req.cookies.lee_site_pv || ''
             }; // 查询条件
             db.collection(dbName).find(whereStr).toArray((err, data) => {
                 if (err) {
