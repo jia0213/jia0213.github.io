@@ -23,4 +23,7 @@
     .contrib-column {
         display: table-cell !important;
     }
+    #recent-posts>.recent-post-item {
+        width: 100%;
+    }
 }
