@@ -32,9 +32,9 @@ https://lovelee.cn/music/index.html
 https://lovelee.cn/
 https://lovelee.cn/tags/Vue/
 https://lovelee.cn/tags/git/
-https://lovelee.cn/tags/note/
 https://lovelee.cn/tags/hexo/
 https://lovelee.cn/tags/butterfly/
+https://lovelee.cn/tags/note/
 https://lovelee.cn/tags/vercel/
 https://lovelee.cn/tags/less/
 https://lovelee.cn/tags/nodejs/
