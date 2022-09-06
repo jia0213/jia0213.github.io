@@ -6,7 +6,7 @@
   <link href="https://lovelee.cn/atom.xml" rel="self"/>
   
   <link href="https://lovelee.cn/"/>
-  <updated>2022-08-31T06:47:56.174Z</updated>
+  <updated>2022-09-06T09:39:12.973Z</updated>
   <id>https://lovelee.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次vercelApi+mongoAtlas的使用</title>
+    <link href="https://lovelee.cn/2022/09/06/vercelApi+mongoAtlas/"/>
+    <id>https://lovelee.cn/2022/09/06/vercelApi+mongoAtlas/</id>
+    <published>2022-09-06T15:12:31.000Z</published>
+    <updated>2022-09-06T09:39:12.973Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.先创建 MongoDB Altas 集群（免费的就可以），过程中会创建数据库用户<br>2.回到vercel添加集成<br>将刚刚创建好的MongDB集成添加到Vercely用户账户(在企业设置中，你可以把它添加到你的Vercel团队中。) 导航到<a href="https://vercel.com/integrations/mongodbatlas">https://vercel.com/integrations/mongodbatlas</a><br>，点击顶部的 “添加集成 “按钮。你会看到一个包含下拉菜单的模式，你想使用的账户应该出现在那里，如下图步骤1。</p><blockquote><p>步骤1.添加MongoDB Atlas集成到Vercel</p></blockquote><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/46116af77c298ad9c296c917012502b4.png"></p>          </div><p>接下来，你可以选择将集成添加到所有项目或特定项目中。为了这个演示，让我们选择 “添加到所有（all） “并点击继续，一路默认即可。管理时需要登录 mongodb Altas 没有账户的需要先注册。</p><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/bd03334c802dd4e70373a5fcf92ea5d4.png"><br><img src="https://img.gejiba.com/images/dc05fa45c0585b5c9acd648615c869e8.png"><br><img src="https://img.gejiba.com/images/60b2918ff21e51d14615ad6f1dec9a52.png"><br><img src="https://img.gejiba.com/images/18ffc4b337b9d252b8aaa453c786f281.png"><br><img src="https://img.gejiba.com/images/fbfbf5188baed69bee5b21faf6278923.png"></p>          </div><blockquote><p>将Vercel项目与MongoDB Atlas集群相关联<br>下一步是在MongoDB Atlas集群和Vercel项目之间创建桥梁。确保你在Vercel方面选择了正确的项目!</p></blockquote><p>一旦这样做了，Vercel项目将自动访问我们需要的环境变量(MONGODB_URL)，以便轻松地连接到数据存储。</p><blockquote><p>回到Vercel中，你会在首页集成标签中看到MongoDB Atlas集成    </p></blockquote><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/a96e5b55774706c6c89efdeed93c4931.png"></p>          </div><p>在这里，你可以对集成的Vercel端进行修改（包括卸载它，如果你愿意，选择管理-&gt;卸载）。</p><p>接下来，我们验证Vercel项目是否已经接受了新的环境变量，该变量指的是MongoDB Atlas的安装。打开使用的Vercel项目，并点击设置。在设置中，点击左侧菜单中的 “环境变量”。然后你应该看到一个MONGODB_URI 变量列在那里。</p><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/6f8164219f04b1375da9c036c599b867.png"></p>          </div><p>如果你点击变量中的眼睛图标，你可以看到值，它应该指向你的MongoDB Atlas集群。这验证了环境变量MONGODB_URI在部署时对应用程序是可用的。</p><blockquote><p>如何使用它？<br>可以在业务中，引用环境变量<br>const uri = process.env[“MONGODB_URI”];</p></blockquote><p>需要提示一点，在本地和线上环境切换，开发测试还是需要在本地，所以需要在本地开展一个测试环境判断。以便于开发</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">require(&#x27;dotenv&#x27;).config();</span><br><span class="line"></span><br><span class="line">// 1 cnpm install mongodb --save</span><br><span class="line"></span><br><span class="line">//2、引入mongodb</span><br><span class="line">const &#123;</span><br><span class="line">    MongoClient</span><br><span class="line">&#125; = require(&#x27;mongodb&#x27;);</span><br><span class="line"></span><br><span class="line">let url = process.env[&quot;MONGODB_URI&quot;];</span><br><span class="line"></span><br><span class="line">//3、定义数据库连接的地址</span><br><span class="line">if (process.env[&#x27;NODE_ENV&#x27;] === &#x27;development&#x27;) &#123;</span><br><span class="line">    url = &#x27;****&#x27; //线上或本地 测试用地址</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (!url) &#123;</span><br><span class="line">    throw new Error(&#x27;Please set Mongo URI&#x27;)</span><br><span class="line">&#125;</span><br><span class="line">const client = new MongoClient(url, &#123;</span><br><span class="line">    useUnifiedTopology: true</span><br><span class="line">&#125;);</span><br><span class="line">......</span><br></pre></td></tr></table></figure><p>注意这个文件的第一行是调用导入’dotenv/config’ 。这个导入导致dotenv库自我启动。dotenv的目的是为应用程序从配置文件中加载环境变量（以一种与操作系统无关的方式）。更多相关信息请点击<a href="https://www.npmjs.com/package/dotenv%E3%80%82">https://www.npmjs.com/package/dotenv。</a><br>对于我们的应用程序，我们想在开发期间将该变量设置为本地URI，并在生产期间将其设置为远程MongoDB Atlas URL。我们可以通过提供一个.env文件来做到这一点，dotenv在本地开发时可以找到这个文件，但在生产时则不能。为了达到这个目的，我们不将该文件纳入版本控制–我们将其添加到.gitignore。</p><blockquote><p>添加到.env和.gitignore中</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// .env</span><br><span class="line">MONGODB_URI=&quot;mongodb://localhost:27017</span><br><span class="line"></span><br><span class="line">// .gitignore</span><br><span class="line">.env</span><br><span class="line">.env.*</span><br><span class="line"></span><br></pre></td></tr></table></figure><blockquote><p>vercel中环境变量的使用 <a href="https://vercel.com/docs/concepts/projects/environment-variables">https://vercel.com/docs/concepts/projects/environment-variables</a></p></blockquote><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/43c351249b13853db205e41f16242ce1.png"></p>          </div><blockquote><p>要在vercel api serverless function 里面使用第三方的包，需要查看高级用法的文档，（普通里没说）但是没有找到我报错的解决方法 </p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="title class_">MongoClient</span></span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">&#x27;mongodb&#x27;</span>);</span><br></pre></td></tr></table></figure><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/b765a46a6fb47e7ae5ec60e4a1518172.png"></p>          </div><p><a href="https://vercel.com/docs/runtimes#advanced-usage/advanced-node-js-usage">https://vercel.com/docs/runtimes#advanced-usage/advanced-node-js-usage</a></p><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/f538636452842207fa55ae40520d7acb.png"></p>          </div><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/4b18206f675abb58a8ae62304c5c8344.png"></p>          </div><blockquote><p>hexo 中使用 api 模式 链接数据库，第三方报错解决方法：<br>在 api 目录 创建 package.json ,将接口需要的第三方模块依赖增加进去，编译的时候就会自动安装。</p></blockquote><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/7a1cfc259199aad2f23979908eb3e7a6.png"></p>          </div><p>部署在线上，直接访问结果：</p><div class="fj-gallery"><p><img src="https://img.gejiba.com/images/a9d92cfb589eafa0732254cc4db29422.png"></p>          </div><p>成功！</p>]]></content>
+    
+    
+    <summary type="html">vercelApi+mongoAtlas的使用</summary>
+    
+    
+    
+    <category term="后端" scheme="https://lovelee.cn/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="vercel" scheme="https://lovelee.cn/tags/vercel/"/>
+    
+    <category term="nodejs" scheme="https://lovelee.cn/tags/nodejs/"/>
+    
+    <category term="mongodb" scheme="https://lovelee.cn/tags/mongodb/"/>
+    
+    <category term="vercelApi" scheme="https://lovelee.cn/tags/vercelApi/"/>
+    
+  </entry>
   
   <entry>
     <title>github action deploy hexo(based on butterfly)</title>
@@ -469,27 +496,6 @@
     
     
     <category term="axios" scheme="https://lovelee.cn/tags/axios/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑小技巧</title>
-    <link href="https://lovelee.cn/2022/08/29/%E5%85%B6%E4%BB%96%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/"/>
-    <id>https://lovelee.cn/2022/08/29/%E5%85%B6%E4%BB%96%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/</id>
-    <published>2022-08-28T19:56:28.000Z</published>
-    <updated>2022-08-28T11:59:59.284Z</updated>
-    
-    <content type="html"><![CDATA[<div class="timeline purple"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2022</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-28</p></div></div><div class='timeline-item-content'><p>今天移动硬盘插上有反应，但是在盘符里找不到，上网查了了解到，是把移动存储设备当成 打印机和媒体设备解析了，最后在蓝牙那一列里，把他从媒体设备列表里删除，然后重新插拔。就ok了。</p></div></div></div>]]></content>
-    
-    
-    <summary type="html">电脑使用相关技巧</summary>
-    
-    
-    
-    <category term="电脑技巧" scheme="https://lovelee.cn/categories/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/"/>
-    
-    
-    <category term="学习" scheme="https://lovelee.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
