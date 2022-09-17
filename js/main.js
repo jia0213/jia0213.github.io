@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 200)()
     }
 
-    window.addEventListener('scroll', scrollCollect)
+    // window.addEventListener('scroll', scrollCollect)
   }
 
   /**
@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function () {
         findHeadPosition(currentTop)
       }, 100)()
     }
-    window.addEventListener('scroll', tocScrollFn)
+    // window.addEventListener('scroll', tocScrollFn)
   }
 
   /**

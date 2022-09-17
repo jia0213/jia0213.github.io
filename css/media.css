@@ -27,3 +27,18 @@
         width: 100%;
     }
 }
+
+@media screen and (min-width: 900px){
+    #nav .back-home-button:hover {
+        box-shadow: 0 8px 12px -3px #20202023;
+        
+    }
+}
+@media screen and (max-width: 768px){
+    .back-home-button:hover .back-menu-list-groups {
+        padding-bottom: 8px;
+        box-shadow: 0 8px 12px -3px #20202023;
+        left: 2px !important;
+    }
+}
+
