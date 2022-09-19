@@ -320,16 +320,8 @@ $(window).on('load', function () {
                     // effect: "cards",
                     effect: "coverflow",
                     // parallax: true,
-                    grabCursor: true,
                     loop:true,
                     autoplay:true,
-                    grabCursor: true,
-                    cubeEffect: {
-                    shadow: true,
-                    slideShadows: true,
-                    shadowOffset: 20,
-                    shadowScale: 0.94,
-                    }
                 });
             }
         },
