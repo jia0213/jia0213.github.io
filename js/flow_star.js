@@ -318,7 +318,7 @@ $(window).on('load', function () {
             if(Swiper){
                 var swiper = new Swiper(".mySwiper", {
                     // effect: "cards",
-                    effect: "coverflow",
+                    // effect: "coverflow",
                     // parallax: true,
                     loop:true,
                     autoplay:true,
