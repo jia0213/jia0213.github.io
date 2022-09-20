@@ -314,9 +314,9 @@ $(window).on('load', function () {
             });
             // str+='</div>';
             str+='</div>';
-            $(str).prependTo($('.mySwiper'));
+            $(str).prependTo($('.announcement_content .mySwiper'));
             if(Swiper){
-                var swiper = new Swiper(".mySwiper", {
+                var swiper = new Swiper(".announcement_content .mySwiper", {
                     // effect: "cards",
                     // effect: "coverflow",
                     // parallax: true,
