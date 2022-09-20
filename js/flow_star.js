@@ -321,6 +321,7 @@ $(window).on('load', function () {
                     // effect: "coverflow",
                     // parallax: true,
                     loop:true,
+                    direction: "vertical",
                     autoplay:true,
                 });
             }
