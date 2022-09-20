@@ -327,7 +327,6 @@ $(window).on('load', function () {
             }
         },
         getList() {
-            this.setDom();
             let that = this;
             $.ajax({
                 type: 'post',
@@ -336,6 +335,9 @@ $(window).on('load', function () {
                     if (result) {
                         that.setDom([...data]);
                     }
+                },
+                error(){
+                    this.setDom();
                 }
             })
         },
