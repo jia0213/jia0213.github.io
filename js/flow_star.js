@@ -337,7 +337,7 @@ $(window).on('load', function () {
                     }
                 },
                 error(){
-                    this.setDom();
+                    that.setDom();
                 }
             })
         },
