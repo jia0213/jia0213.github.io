@@ -1,3 +1,5 @@
+const express = require("express");
+const app = express();
 // 1 cnpm install mongodb --save
 
 //2、引入mongodb
@@ -24,16 +26,24 @@ const dbName = "site_pv";
 const client = new MongoClient(url, {
     useUnifiedTopology: true,
 });
-
+app.all("*", function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); //   *
+    // res.header("Access-Control-Allow-Credentials", "true");
+    // res.header("Access-Control-Allow-Origin", "*"); //   *
+    //允许的header类型
+    res.header("Access-Control-Allow-Headers", "content-type");
+    //跨域允许的请求方式
+    res.header(
+        "Access-Control-Allow-Methods",
+        "DELETE,PUT,POST,GET,OPTIONS"
+    );
+    next();
+});
 module.exports = function site_pv(req, res) {
     // 设置允许跨域的域名，*代表允许任意域名跨域
     // res.header("Access-Control-Allow-Origin","http://localhost:8080");
     // res.header("Access-Control-Allow-Origin","http://127.0.0.1:1387");
-    res.header("Access-Control-Allow-Origin", "*");
-    // 允许的header类型
-    res.header("Access-Control-Allow-Headers", "content-type");
-    // 跨域允许的请求方式
-    res.header("Access-Control-Allow-Methods", "DELETE,PUT,POST,GET,OPTIONS");
+    
     // 访问者
     let cookies = req.cookies || {};
     let only_lee_site_pv;
