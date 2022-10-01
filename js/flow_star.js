@@ -331,6 +331,7 @@ $(window).on('load', function () {
             $.ajax({
                 type: 'post',
                 url: '/api/myTalk',
+                // url: 'http://localhost:3000/api/myTalk',
                 success({ result, data }) {
                     if (result) {
                         that.setDom([...data]);
