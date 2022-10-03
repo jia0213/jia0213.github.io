@@ -217,8 +217,9 @@ $(window).on('load', function () {
     }
     window.scrollCollect && window.removeEventListener('scroll', window.scrollCollect || function(){});
 
-    // const _apiBaseUrl = "http://localhost:3000";
-    const _apiBaseUrl = "";
+    const _apiBaseUrl = "http://localhost:3000";
+    // const _apiBaseUrl = "";
+    // const _apiBaseUrl = "https://vercel.lovelee.cn";
     // 记录访问信息
     let isRecording = false;
     if(!sessionStorage.login){
@@ -330,7 +331,7 @@ $(window).on('load', function () {
             let that = this;
             $.ajax({
                 type: 'post',
-                url: '/api/myTalk',
+                url: `${_apiBaseUrl}/api/myTalk`,
                 // url: 'http://localhost:3000/api/myTalk',
                 success({ result, data }) {
                     if (result) {
