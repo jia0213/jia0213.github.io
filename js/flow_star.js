@@ -219,7 +219,7 @@ $(window).on('load', function () {
 
     // const _apiBaseUrl = "http://localhost:3000";
     // const _apiBaseUrl = "";
-    const _apiBaseUrl = "https://vercel.lovelee.cn";
+    const _apiBaseUrl = "https://blog-api.lovelee.cn";
     // 记录访问信息
     let isRecording = false;
     if(!sessionStorage.login){

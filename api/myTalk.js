@@ -13,8 +13,11 @@ if (process.env["NODE_ENV"] === "development") {
         "mongodb+srv://a984419317:xwWdiogW0hEgxD5L@twikoo.5gbi80s.mongodb.net/?retryWrites=true&w=majority";
 }
 
+console.log(app);
+console.log(process.env["MONGODB_URI"],'~~~');
+
 if (!url) {
-    throw new Error("Please set Mongo URI");
+    throw new Error("Please set Mongo URI"+process.env["MONGODB_URI"]);
 }
 
 // const url = 'mongodb+srv://a984419317:xwWdiogW0hEgxD5L@twikoo.5gbi80s.mongodb.net/?retryWrites=true&w=majority'; // mongodb://127.0.0.1:27017
