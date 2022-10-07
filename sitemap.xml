@@ -218,24 +218,6 @@
   </url>
   
   <url>
-    <loc>https://blog.lovelee.cn/api/package.json</loc>
-    
-    <lastmod>2022-10-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.lovelee.cn/api/vercel.json</loc>
-    
-    <lastmod>2022-10-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.lovelee.cn/categories/index.html</loc>
     
     <lastmod>2022-10-07</lastmod>
@@ -318,6 +300,15 @@
   
   <url>
     <loc>https://blog.lovelee.cn/tags/index.html</loc>
+    
+    <lastmod>2022-10-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.lovelee.cn/visitor/index.html</loc>
     
     <lastmod>2022-10-07</lastmod>
     
