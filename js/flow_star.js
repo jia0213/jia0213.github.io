@@ -333,6 +333,12 @@ $(window).on('load', function () {
                 type: 'post',
                 url: `${_apiBaseUrl}/api/myTalk`,
                 // url: 'http://localhost:3000/api/myTalk',
+                cache: false,
+                async:false,
+                data:{
+                    type:'get',
+                    d:Date.now()
+                },
                 success({ result, data }) {
                     if (result) {
                         that.setDom([...data]);
