@@ -3646,12 +3646,12 @@ h1.page-title + .tag-cloud-list {
   content: '';
 }
 #page-header.full_page {
-  height: 0px;
+  height: 100vh;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
   position: absolute;
-  top: 100px;
+  top: 38%;
   padding: 0 10px;
   width: 100%;
 }
@@ -3700,6 +3700,7 @@ h1.page-title + .tag-cloud-list {
 }
 #page-header #scroll-down {
   position: absolute;
+  height: 90px;
   bottom: 0;
   width: 100%;
   cursor: pointer;

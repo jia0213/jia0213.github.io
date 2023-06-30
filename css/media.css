@@ -19,6 +19,11 @@
     }
 }
 
+@media screen and (max-width:768px) {
+    #recent-posts>.recent-post-item {
+        width: 100%
+    }
+}
 @media screen and (max-width: 650px){
     .contrib-column {
         display: table-cell !important;
