@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>内嵌不编译文件</title>
+      <title>内嵌编译html</title>
       <link href="/lee/f6c60a21.html"/>
       <url>/lee/f6c60a21.html</url>
       
-        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title></head><body>    <div>hello world</div>    <iframe src="https://lovelee.cn" style="width: 100%;height: 80vh;" frameborder="0"></iframe></body></html>]]></content>
+        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title></head><body>    <iframe src="https://lovelee.cn" style="width: 100%;height: 80vh;" frameborder="0"></iframe></body></html>]]></content>
       
       
       <categories>
@@ -150,7 +150,7 @@
       <link href="/lee/52282.html"/>
       <url>/lee/52282.html</url>
       
-        <content type="html"><![CDATA[<div class="note purple no-icon flat"><p>平时收集到的资料 </p></div><div class="tabs" id="效果分类"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#效果分类-1">css</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="效果分类-1"><ul><li>1、Neumorphism 地址：<a href="https://neumorphism.io/">https://neumorphism.io/</a></li><li>2、带有渐变的图标 地址：<a href="https://www.iconshock.com/svg-icons/">https://www.iconshock.com/svg-icons/</a></li><li>3、Interactions 地址：<a href="https://easings.co/">https://easings.co/</a></li><li>4、大型数据库 地址：<a href="https://bansal.io/pattern-css">https://bansal.io/pattern-css</a></li><li>5、自定义形状分隔线 地址：<a href="https://www.shapedivider.app/">https://www.shapedivider.app/</a></li><li>6、动画 地址：<a href="https://animista.net/">https://animista.net/</a></li><li>7、Mask 地址：<a href="https://bennettfeely.com/">https://bennettfeely.com/</a></li><li>8、动画按钮 地址：<a href="https://tympanus.net/Development/MagneticButtons/index.html">https://tympanus.net/Development/MagneticButtons/index.html</a></li><li>9、背景图案 地址：<a href="https://www.magicpattern.design/tools/css-backgrounds">https://www.magicpattern.design/tools/css-backgrounds</a></li><li>10、SVG波浪 地址：<a href="https://svgwave.in/">https://svgwave.in/</a></li></ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>]]></content>
+        <content type="html"><![CDATA[<div class="note purple no-icon flat"><p>平时收集到的资料 </p></div><div class="tabs" id="效果分类"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#效果分类-1">css</button></li><li class="tab"><button type="button" data-href="#效果分类-2">js资料和辅助函数</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="效果分类-1"><ul><li>1、Neumorphism 地址： <a href="https://neumorphism.io/">https://neumorphism.io/</a></li><li>2、带有渐变的图标 地址： <a href="https://www.iconshock.com/svg-icons/">https://www.iconshock.com/svg-icons/</a></li><li>3、Interactions 地址： <a href="https://easings.co/">https://easings.co/</a></li><li>4、大型数据库 地址： <a href="https://bansal.io/pattern-css">https://bansal.io/pattern-css</a></li><li>5、自定义形状分隔线 地址： <a href="https://www.shapedivider.app/">https://www.shapedivider.app/</a></li><li>6、动画 地址： <a href="https://animista.net/">https://animista.net/</a></li><li>7、Mask 地址： <a href="https://bennettfeely.com/">https://bennettfeely.com/</a></li><li>8、动画按钮 地址： <a href="https://tympanus.net/Development/MagneticButtons/index.html">https://tympanus.net/Development/MagneticButtons/index.html</a></li><li>9、背景图案 地址： <a href="https://www.magicpattern.design/tools/css-backgrounds">https://www.magicpattern.design/tools/css-backgrounds</a></li><li>10、SVG波浪 地址： <a href="https://svgwave.in/">https://svgwave.in/</a></li></ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="效果分类-2"><ul><li>1、js工具函数 地址： <a href="/static/1.html">工具函数</a></li></ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>]]></content>
       
       
       
